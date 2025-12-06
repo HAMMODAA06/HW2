@@ -1,121 +1,183 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2024-12-05T00:00:00Z" agent="Mozilla/5.0" version="24.6.5" type="device">
-  <diagram name="Inventory System" id="q1-YuL5oZ6Un4yP3Jdxk">
-    <mxGraphModel dx="1422" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        
-        <!-- Person -->
-        <mxCell id="person" value="&lt;b&gt;Person&lt;/b&gt;&lt;br&gt;-----------&lt;br&gt;person_id (PK)&lt;br&gt;name&lt;br&gt;date_of_birth" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="320" y="50" width="160" height="100" as="geometry" />
-        </mxCell>
-        
-        <!-- Customer -->
-        <mxCell id="customer" value="&lt;b&gt;Customer&lt;/b&gt;&lt;br&gt;-----------&lt;br&gt;customer_id (PK)&lt;br&gt;address&lt;br&gt;phone" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="180" y="200" width="160" height="90" as="geometry" />
-        </mxCell>
-        
-        <!-- Supplier -->
-        <mxCell id="supplier" value="&lt;b&gt;Supplier&lt;/b&gt;&lt;br&gt;-----------&lt;br&gt;supplier_id (PK)&lt;br&gt;company_name" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="460" y="200" width="160" height="80" as="geometry" />
-        </mxCell>
-        
-        <!-- Item -->
-        <mxCell id="item" value="&lt;b&gt;Item&lt;/b&gt;&lt;br&gt;-----------&lt;br&gt;item_code (PK)&lt;br&gt;name&lt;br&gt;cost&lt;br&gt;price" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="320" y="350" width="160" height="110" as="geometry" />
-        </mxCell>
-        
-        <!-- Purchase -->
-        <mxCell id="purchase" value="&lt;b&gt;Purchase&lt;/b&gt;&lt;br&gt;-----------&lt;br&gt;purchase_id (PK)&lt;br&gt;purchase_date&lt;br&gt;quantity" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="320" y="520" width="160" height="90" as="geometry" />
-        </mxCell>
-        
-        <!-- Inheritance Customer->Person -->
-        <mxCell id="inh1" value="" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="customer" target="person">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="260" y="200" as="sourcePoint" />
-            <mxPoint x="310" y="150" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        
-        <!-- Inheritance Supplier->Person -->
-        <mxCell id="inh2" value="" style="endArrow=block;endFill=1;endSize=12;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="supplier" target="person">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="540" y="200" as="sourcePoint" />
-            <mxPoint x="490" y="150" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        
-        <!-- Supplier provides Item -->
-        <mxCell id="rel1" value="" style="endArrow=open;endSize=12;html=1;rounded=0;strokeWidth=1;" edge="1" parent="1" source="supplier" target="item">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="490" y="240" as="sourcePoint" />
-            <mxPoint x="440" y="290" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel1_label" value="&lt;b&gt;provides&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="rel1">
-          <mxGeometry x="0.5" y="-0.8" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel1_card1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="rel1">
-          <mxGeometry x="0.2" y="-0.8" relative="1" as="geometry">
-            <mxPoint x="5" y="-15" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel1_card2" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="rel1">
-          <mxGeometry x="0.8" y="-0.8" relative="1" as="geometry">
-            <mxPoint x="-5" y="-15" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        
-        <!-- Customer makes Purchase -->
-        <mxCell id="rel2" value="" style="endArrow=open;endSize=12;html=1;rounded=0;strokeWidth=1;" edge="1" parent="1" source="customer" target="purchase">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="260" y="240" as="sourcePoint" />
-            <mxPoint x="310" y="290" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel2_label" value="&lt;b&gt;makes&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="rel2">
-          <mxGeometry x="0.5" y="-0.8" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel2_card1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="rel2">
-          <mxGeometry x="0.2" y="-0.8" relative="1" as="geometry">
-            <mxPoint x="5" y="-10" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel2_card2" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="rel2">
-          <mxGeometry x="0.8" y="-0.8" relative="1" as="geometry">
-            <mxPoint x="-5" y="-10" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        
-        <!-- Purchase includes Item -->
-        <mxCell id="rel3" value="" style="endArrow=open;endSize=12;html=1;rounded=0;strokeWidth=1;" edge="1" parent="1" source="purchase" target="item">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="400" y="520" as="sourcePoint" />
-            <mxPoint x="350" y="460" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel3_label" value="&lt;b&gt;includes&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="rel3">
-          <mxGeometry x="0.5" y="-0.8" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel3_card1" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="rel3">
-          <mxGeometry x="0.2" y="-0.8" relative="1" as="geometry">
-            <mxPoint x="5" y="-10" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rel3_card2" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="rel3">
-          <mxGeometry x="0.8" y="-0.8" relative="1" as="geometry">
-            <mxPoint x="-5" y="-10" as="offset" />
-          </mxGeometry>
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-</mxfile>
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ERD Diagram (SVG)</title>
+<style>
+  body { background:#0f1724; color:#fff; font-family: "Segoe UI", Tahoma, Arial; margin:0; padding:20px; }
+  .canvas { max-width:1200px; margin:0 auto; border:1px solid rgba(255,255,255,0.05); background:linear-gradient(180deg,#0b1220,#07101a); padding:12px; border-radius:8px;}
+  svg { width:100%; height:900px; display:block; }
+  .entity { fill:#0b1220; stroke:#fff; stroke-width:3; rx:6; }
+  .entity-text { fill:#fff; font-weight:700; font-size:14px; text-anchor:middle; dominant-baseline:middle; }
+  .attr { fill:#0b1220; stroke:#fff; stroke-width:2.2; rx:50; }
+  .attr-text { fill:#fff; font-size:12px; text-anchor:middle; dominant-baseline:middle; }
+  .diamond { fill:#0b1220; stroke:#fff; stroke-width:2.2; }
+  .rel-text { fill:#fff; font-size:12px; text-anchor:middle; dominant-baseline:middle; font-weight:600; }
+  .link { stroke:#fff; stroke-width:2; fill:none; }
+  .card { fill:#fff; font-size:12px; font-weight:700; }
+  /* small labels for cardinality */
+  .card-text { fill:#fff; font-size:12px; font-weight:700; }
+</style>
+</head>
+<body>
+<div class="canvas">
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" dir="rtl">
+  <!-- EMPLOYEE entity -->
+  <rect x="80" y="150" width="180" height="60" class="entity"/>
+  <text x="170" y="180" class="entity-text">EMPLOYEE</text>
+
+  <!-- Employee attributes -->
+  <ellipse cx="20" cy="110" rx="60" ry="26" class="attr"/>
+  <text x="20" y="110" class="attr-text">Fname</text>
+
+  <ellipse cx="100" cy="85" rx="60" ry="26" class="attr"/>
+  <text x="100" y="85" class="attr-text">Minit</text>
+
+  <ellipse cx="190" cy="110" rx="60" ry="26" class="attr"/>
+  <text x="190" y="110" class="attr-text">Lname</text>
+
+  <ellipse cx="80" cy="60" rx="60" ry="26" class="attr"/>
+  <text x="80" y="60" class="attr-text">Bdate</text>
+
+  <ellipse cx="80" cy="220" rx="60" ry="26" class="attr"/>
+  <text x="80" y="220" class="attr-text">Sex</text>
+
+  <ellipse cx="240" cy="220" rx="60" ry="26" class="attr"/>
+  <text x="240" y="220" class="attr-text">Ssn</text>
+
+  <ellipse cx="310" cy="170" rx="60" ry="26" class="attr"/>
+  <text x="310" y="170" class="attr-text">Address</text>
+
+  <ellipse cx="260" cy="130" rx="60" ry="26" class="attr"/>
+  <text x="260" y="130" class="attr-text">Name</text>
+
+  <ellipse cx="300" cy="210" rx="60" ry="26" class="attr"/>
+  <text x="300" y="210" class="attr-text">Salary</text>
+
+  <!-- Links from EMPLOYEE to attributes -->
+  <path d="M110 150 L60 115" class="link" />
+  <path d="M110 150 L120 100" class="link" />
+  <path d="M200 150 L210 115" class="link" />
+  <path d="M110 150 L110 80" class="link" />
+  <path d="M110 190 L110 215" class="link" />
+  <path d="M240 180 L240 215" class="link" />
+  <path d="M260 150 L300 170" class="link" />
+  <path d="M200 150 L260 130" class="link" />
+  <path d="M200 190 L300 210" class="link" />
+
+  <!-- DEPARTMENT entity -->
+  <rect x="820" y="110" width="180" height="60" class="entity"/>
+  <text x="910" y="140" class="entity-text">DEPARTMENT</text>
+
+  <!-- Department attributes -->
+  <ellipse cx="980" cy="70" rx="50" ry="22" class="attr"/>
+  <text x="980" y="70" class="attr-text">Number</text>
+
+  <ellipse cx="840" cy="70" rx="55" ry="22" class="attr"/>
+  <text x="840" y="70" class="attr-text">Name</text>
+
+  <ellipse cx="980" cy="160" rx="60" ry="24" class="attr"/>
+  <text x="980" y="160" class="attr-text">Locations</text>
+
+  <!-- PROJECT entity -->
+  <rect x="820" y="420" width="180" height="60" class="entity"/>
+  <text x="910" y="450" class="entity-text">PROJECT</text>
+
+  <ellipse cx="980" cy="390" rx="55" ry="22" class="attr"/>
+  <text x="980" y="390" class="attr-text">Number</text>
+
+  <ellipse cx="840" cy="390" rx="55" ry="22" class="attr"/>
+  <text x="840" y="390" class="attr-text">Name</text>
+
+  <ellipse cx="900" cy="520" rx="60" ry="24" class="attr"/>
+  <text x="900" y="520" class="attr-text">Location</text>
+
+  <!-- DEPENDENT entity -->
+  <rect x="240" y="600" width="160" height="60" class="entity"/>
+  <text x="320" y="630" class="entity-text">DEPENDENT</text>
+
+  <ellipse cx="200" cy="660" rx="60" ry="24" class="attr"/>
+  <text x="200" y="660" class="attr-text">Name</text>
+
+  <ellipse cx="260" cy="710" rx="60" ry="24" class="attr"/>
+  <text x="260" y="710" class="attr-text">Sex</text>
+
+  <!-- Relationships (diamonds) -->
+  <!-- WORKS_FOR between EMPLOYEE and DEPARTMENT -->
+  <g transform="translate(420,140)">
+    <polygon points="-30,0 0,40 30,0 0,-40" class="diamond" />
+    <text x="0" y="4" class="rel-text">WORKS_FOR</text>
+    <!-- cardinalities -->
+    <text x="-90" y="8" class="card-text">N</text>
+    <text x="90" y="8" class="card-text">1</text>
+  </g>
+  <path d="M260 180 L390 160" class="link"/>
+  <path d="M620 160 L640 160" class="link"/>
+  <path d="M540 160 L820 140" class="link"/>
+
+  <!-- MANAGES relationship (EMPLOYEE manages DEPARTMENT) -->
+  <g transform="translate(600,240)">
+    <polygon points="-24,0 0,30 24,0 0,-30" class="diamond"/>
+    <text x="0" y="4" class="rel-text">MANAGES</text>
+  </g>
+  <path d="M200 180 L576 220" class="link"/>
+  <path d="M660 220 L820 170" class="link"/>
+  <ellipse cx="670" cy="235" rx="40" ry="18" class="attr"/>
+  <text x="670" y="235" class="attr-text">start_date</text>
+  <text x="730" y="220" class="card-text">1</text>
+  <text x="540" y="220" class="card-text">1</text>
+
+  <!-- CONTROLS relationship between DEPARTMENT and PROJECT -->
+  <g transform="translate(900,310)">
+    <polygon points="-24,0 0,30 24,0 0,-30" class="diamond"/>
+    <text x="0" y="4" class="rel-text">CONTROLS</text>
+    <text x="-80" y="10" class="card-text">1</text>
+    <text x="80" y="10" class="card-text">N</text>
+  </g>
+  <path d="M880 170 L900 280" class="link"/>
+  <path d="M900 340 L900 420" class="link"/>
+
+  <!-- WORKS_ON relationship between EMPLOYEE and PROJECT -->
+  <g transform="translate(520,420)">
+    <polygon points="-28,0 0,36 28,0 0,-36" class="diamond"/>
+    <text x="0" y="4" class="rel-text">WORKS_ON</text>
+  </g>
+  <path d="M240 210 L520 410" class="link"/>
+  <path d="M820 460 L560 460" class="link"/>
+  <ellipse cx="520" cy="490" rx="40" ry="20" class="attr"/>
+  <text x="520" y="490" class="attr-text">Hours</text>
+  <text x="450" y="420" class="card-text">N</text>
+  <text x="760" y="450" class="card-text">N</text>
+
+  <!-- DEPENDENT_OF relationship between EMPLOYEE and DEPENDENT -->
+  <g transform="translate(300,470)">
+    <polygon points="-36,0 0,44 36,0 0,-44" class="diamond"/>
+    <text x="0" y="6" class="rel-text">DEPENDENT_OF</text>
+  </g>
+  <path d="M200 200 L300 520" class="link"/>
+  <path d="M320 660 L320 660" class="link"/>
+  <text x="260" y="520" class="card-text">N</text>
+  <text x="320" y="560" class="card-text">N</text>
+
+  <!-- SUPERVISION relationship (employee supervises employee) -->
+  <g transform="translate(220,320)">
+    <polygon points="-28,0 0,36 28,0 0,-36" class="diamond"/>
+    <text x="0" y="4" class="rel-text">SUPERVISION</text>
+    <text x="-20" y="40" class="card-text">1</text>
+    <text x="70" y="40" class="card-text">N</text>
+  </g>
+  <path d="M200 210 L210 320" class="link"/>
+  <path d="M170 210 L260 320" class="link"/>
+
+  <!-- lines connecting DEPENDENT entity -->
+  <path d="M320 660 L320 640" class="link"/>
+  <path d="M320 660 L300 700" class="link"/>
+
+  <!-- small legend / title -->
+  <text x="700" y="40" fill="#fff" font-size="20" font-weight="800" text-anchor="middle">ERD - مثال Employee / Department / Project</text>
+
+</svg>
+</div>
+</body>
+</html>
